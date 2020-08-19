@@ -30,7 +30,7 @@ class MyHomePage extends StatelessWidget{
         title: new Text(this.title),
       ),
       body: new ListView(children:<Widget>[
-        CeramicaWidget("Delta", "https://www.duragres.com.br/img/atendente.jpg"),
+        CeramicaWidget("Delta", "https://www.deltaceramica.com.br/img/logo-down.jpg"),
         CeramicaWidget("Embramaco","https://yata-apix-2f602a0f-05cf-4799-8df7-021296412828.lss.locawebcorp.com.br/197b6c1accc846b79ad9bce28bdfd2c5.jpg"),
 
 

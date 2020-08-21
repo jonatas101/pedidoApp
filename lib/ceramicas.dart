@@ -12,15 +12,14 @@ class CeramicaWidget extends StatelessWidget {
       child: Card(
         semanticContainer: true,
         clipBehavior: Clip.antiAliasWithSaveLayer,
-        child: Image.network(
-          this.imageSrc,
+        child: Image.asset('assets/images/'+ imageSrc,
           fit: BoxFit.fill,
         ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
         ),
         elevation: 5,
-        margin: EdgeInsets.all(10),
+        margin: EdgeInsets.all(20),
       ),
     );
   }

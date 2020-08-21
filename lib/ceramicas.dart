@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './embramacoForm.dart';
+
 class CeramicaWidget extends StatelessWidget {
   CeramicaWidget(this.name, this.imageSrc) : super();
 
@@ -9,18 +11,29 @@ class CeramicaWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Card(
+
+      child: new Card(
+      child: new InkWell(
+          onTap:() {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => PedidosEmbramaco()),
+            );
+          },//onTap
+          child: Image.asset('assets/images/'+ imageSrc,
+            fit: BoxFit.fill,
+          ),//Image.asset
+        ),//InkWell
         semanticContainer: true,
         clipBehavior: Clip.antiAliasWithSaveLayer,
-        child: Image.asset('assets/images/'+ imageSrc,
-          fit: BoxFit.fill,
-        ),
+
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
         ),
         elevation: 5,
         margin: EdgeInsets.all(20),
       ),
+
     );
   }
 }

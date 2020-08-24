@@ -7,28 +7,40 @@ class PedidosEmbramaco extends StatelessWidget{
       title:'Pedidos',
       theme: new ThemeData(
         primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-        home: new PedidosPage(title: 'Pedidos'),
+        home: new PedidosPage(title: 'Pedidos Embramaco'),
     );
   }
 }
 
 class PedidosPage extends StatefulWidget {
-  const PedidosPage({Key key, this.title}): super(key: key);
+   PedidosPage({Key key, this.title}): super(key: key);
+   final String title;
 
-  final String title;
 
   @override
   _PedidosPageState createState() => _PedidosPageState();
 }
 
 class _PedidosPageState extends State<PedidosPage>{
+
   @override
   Widget build(BuildContext context){
-    return Container(
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text(widget.title),
+      ),
+    body: new Container(
       child: Center(
         child: Text("Página de pedidos"),
       ),//center
-    );
+    ),//container
+    floatingActionButton: FloatingActionButton(
+      onPressed:(){},
+      tooltip: 'Adicionar pedido',
+      child: Icon(Icons.add),
+    ),//floatingActionButton
+  );//Scaffold
   }
 }

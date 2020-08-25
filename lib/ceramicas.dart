@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './embramacoForm.dart';
+import './pedidosWidget.dart';
 
 class CeramicaWidget extends StatelessWidget {
   CeramicaWidget(this.name, this.imageSrc) : super();
@@ -15,10 +15,12 @@ class CeramicaWidget extends StatelessWidget {
       child: new Card(
       child: new InkWell(
           onTap:() {
+            if (this.name == 'Embramaco'){
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => PedidosEmbramaco()),
             );
+          };//if
           },//onTap
           child: Image.asset('assets/images/'+ imageSrc,
             fit: BoxFit.fill,

@@ -18,11 +18,11 @@ class CeramicaWidget extends StatelessWidget {
             if (this.name == 'Embramaco'){
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => PedidosWidget()),
+              MaterialPageRoute(builder: (context) => PedidosWidget('Embramaco')),
             );
           } else if(this.name == 'Delta'){
 
-            Navigator.push(context, MaterialPageRoute(builder: (context) => PedidosWidget()));//Navigator
+            Navigator.push(context, MaterialPageRoute(builder: (context) => PedidosWidget('Delta')));//Navigator
           };//if
           },//onTap
           child: Image.asset('assets/images/'+ imageSrc,

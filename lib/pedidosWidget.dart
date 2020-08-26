@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class PedidosWidget extends StatelessWidget{
+  final String ceramica;
+
+  PedidosWidget(this.ceramica);
   @override
   Widget build(BuildContext context){
     return new MaterialApp(
@@ -9,7 +12,7 @@ class PedidosWidget extends StatelessWidget{
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-        home: new PedidosPage(title: 'Pedidos Embramaco'),
+        home: new PedidosPage(title: 'Pedidos ' + this.ceramica),
     );
   }
 }

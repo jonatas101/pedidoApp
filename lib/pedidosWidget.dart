@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class PedidosEmbramaco extends StatelessWidget{
+class PedidosWidget extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return new MaterialApp(

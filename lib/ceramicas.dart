@@ -3,10 +3,13 @@ import 'package:flutter/material.dart';
 import './pedidosWidget.dart';
 
 class CeramicaWidget extends StatelessWidget {
-  CeramicaWidget(this.name, this.imageSrc) : super();
 
   final String name;
   final String imageSrc;
+  
+  CeramicaWidget(this.name, this.imageSrc) : super();
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +36,7 @@ class CeramicaWidget extends StatelessWidget {
         clipBehavior: Clip.antiAliasWithSaveLayer,
 
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.0),
+        borderRadius: BorderRadius.circular(10.0),
         ),
         elevation: 5,
         margin: EdgeInsets.all(20),

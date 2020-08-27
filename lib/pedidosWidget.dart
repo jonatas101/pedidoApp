@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './novoPedidoWidget.dart';
+
 class PedidosWidget extends StatelessWidget {
   final String ceramica;
 
@@ -26,10 +28,7 @@ class PedidosPage extends StatefulWidget {
 }
 
 class _PedidosPageState extends State<PedidosPage> {
-  final _formKey = GlobalKey<FormState>();
-  String title = '';
-  String dropdownValue = 'ET-121/7138';
-  DateTime date = DateTime.now();
+
 
   @override
   Widget build(BuildContext context) {
@@ -44,87 +43,7 @@ class _PedidosPageState extends State<PedidosPage> {
       ), //container
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          showDialog(
-              context: context,
-              builder: (_) => new AlertDialog(
-                    title: new Text("Novo Pedido"),
-                    content: new Form(
-                        key: _formKey,
-                        child: Column(
-                          children: [
-                            ...[
-                              TextFormField(
-                                keyboardType: TextInputType.number,
-                                decoration: InputDecoration(
-                                  filled: true,
-                                  hintText: 'Número do pedido',
-                                  labelText: 'Pedido',
-                                ),
-                                onChanged: (value) {
-                                  setState(() {
-                                    title = value;
-                                  });
-                                },
-                              ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                children: <Widget>[
-                                  DropdownButton<String>(
-                                    value: dropdownValue,
-                                    icon: Icon(Icons.arrow_downward),
-                                    iconSize: 12,
-                                    elevation: 16,
-                                    style: TextStyle(color: Colors.blue),
-                                    underline: Container(
-                                      height: 2,
-                                      color: Colors.blueAccent,
-                                    ),
-                                    onChanged: (String newValue) {
-                                      setState(() {
-                                        dropdownValue = newValue;
-                                      });
-                                    },
-                                    items: <String>[
-                                      'ET-121/7138',
-                                      'ET-129/7617',
-                                      'ET-129/7620',
-                                      'ET-129/7381'
-                                    ].map<DropdownMenuItem<String>>(
-                                        (String value) {
-                                      return DropdownMenuItem<String>(
-                                        value: value,
-                                        child: Text(value),
-                                      );
-                                    }).toList(),
-                                  ),
-                                  //TextFormField(
-                                  // keyboardType: TextInputType.number,
-                                  // decoration: InputDecoration(
-                                  //   filled: true,
-                                  //   hintText: 'Volume do item',
-                                  //   labelText: 'Volume',
-                                  // ),
-                                  // onChanged: (value) {
-                                  //   setState(() {
-                                  //     title = value;
-                                  //    });
-                                  //  },
-                                  // ),
-                                ],
-                              ),
-                            ],
-                          ],
-                        )),
-                    actions: <Widget>[
-                      FlatButton(
-                        child: Text('Close me!'),
-                        onPressed: () {
-                          Navigator.of(context).pop();
-                        },
-                      )
-                    ],
-                  ));
+          showAlertDialog(context);
         }, //onPressed
         tooltip: 'Adicionar pedido',
         child: Icon(Icons.add),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './novoPedidoWidget.dart';
+import 'myAlertDialog.dart';
 
 class PedidosWidget extends StatelessWidget {
   final String ceramica;
@@ -28,8 +28,6 @@ class PedidosPage extends StatefulWidget {
 }
 
 class _PedidosPageState extends State<PedidosPage> {
-
-
   @override
   Widget build(BuildContext context) {
     return new Scaffold(

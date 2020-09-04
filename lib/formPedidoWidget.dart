@@ -6,6 +6,7 @@ class FormPedidoWidget extends StatefulWidget {
 }
 
 class _FormPedidoWidgetState extends State<FormPedidoWidget> {
+  String dropdownValue = 'itens';
   final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -46,6 +47,34 @@ class _FormPedidoWidgetState extends State<FormPedidoWidget> {
                 ], //colum/children
               ), //form/column
             ), //form
+          ),
+          Expanded(
+            child: DropdownButton<String>(
+              value: dropdownValue,
+              icon: Icon(Icons.arrow_downward),
+              iconSize: 16,
+              elevation: 20,
+              style: TextStyle(color: Colors.lightBlueAccent[900]),
+              underline: Container(height: 2, color: Colors.blueGrey),
+              onChanged: (String newValue) {
+                setState(() {
+                  dropdownValue = newValue;
+                });
+              },
+              items: <String>[
+                'itens',
+                'ET-121/7138',
+                'ET-129/7617',
+                'ET-129/7620',
+                'ET-129/7381',
+                'ET-129/7315'
+              ].map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+            ),
           ),
         ],
       ),
